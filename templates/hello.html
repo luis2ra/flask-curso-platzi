@@ -1,1 +1,15 @@
-<p>Hello World from Flask!!! Tu IP es {{ user_ip }}</p>
+<!-- estructura de control if -->
+
+{% if user_ip %}
+    <p>Hello World from Flask!!! Tu IP es {{ user_ip }}</p>
+{% else %}
+    <a href="{{ url_for('index') }}">Ir a Inicio </a>
+{% endif %}
+
+
+<!-- estructura de control for -->
+<ul>
+    {% for todo in todos %}
+        <li>{{ todo }}</li>
+    {% endfor %}
+</ul>
