@@ -13,3 +13,6 @@ git push -u origin main
 $ pyenv virtualenv 3.9.16 flask
 $ pyenv local flask
 $ pyenv versions
+
+### correr flask
+$ flask --app main run --debug
