@@ -1,15 +1,24 @@
-<!-- estructura de control if -->
+{% extends 'base.html' %}
+{% from 'macros.html' import render_todo with context %}
 
-{% if user_ip %}
-    <p>Hello World from Flask!!! Tu IP es {{ user_ip }}</p>
-{% else %}
-    <a href="{{ url_for('index') }}">Ir a Inicio </a>
-{% endif %}
+{% block title %}{{ super() }}Bienvenido{% endblock %}
+
+{% block content %}
+
+    <!-- estructura de control if -->
+    {% if user_ip %}
+        <p>Hello World from Flask!!! Tu IP es {{ user_ip }}</p>
+    {% else %}
+        <a href="{{ url_for('index') }}">Ir a Inicio </a>
+    {% endif %}
 
 
-<!-- estructura de control for -->
-<ul>
-    {% for todo in todos %}
-        <li>{{ todo }}</li>
-    {% endfor %}
-</ul>
+    <!-- estructura de control for -->
+    <ul>
+        {% for todo in todos %}
+            <!-- utilizacion del macro definido -->
+            {{ render_todo(todo) }}
+        {% endfor %}
+    </ul>
+
+{% endblock  %}
