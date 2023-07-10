@@ -5,8 +5,25 @@ app = Flask(__name__)
 
 todos = ['TODO 1', 'TODO 2', 'TODO 3']
 
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error)
+
+
+@app.errorhandler(500)
+def server_error(error):
+    return render_template('500.html', error=error)
+
+
 @app.route('/')
 def index():
+    '''
+    Esto permite simular un error 500 en el servidor
+    Nota: para probarlo en local, hay que desactivar 
+    la opcion debug al iniciar el servidor de flask
+    '''
+    # raise Exception("Error 500 - Internal Server Error")
     mi_ip = request.remote_addr
 
     response = make_response(redirect('/hello'))
