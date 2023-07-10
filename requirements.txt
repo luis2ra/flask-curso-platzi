@@ -3,6 +3,7 @@ click==8.1.4
 dominate==2.8.0
 Flask==2.3.2
 Flask-Bootstrap==3.3.7.1
+Flask-Testing==0.8.1
 Flask-WTF==1.1.1
 importlib-metadata==6.8.0
 itsdangerous==2.1.2
