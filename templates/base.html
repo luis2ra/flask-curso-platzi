@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{ super() }}
+
+    <title>
+        {% block title %}Curso de Flask | {% endblock  %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock  %}
+
+{% block body %}
+
+    {% block navbar %}
+        {% include 'navbar.html'  %}
+    {% endblock  %}
+
+    <h1>Curso de Flask de Platzi</h1>
+
+    {% block content %} 
+    {% endblock  %}
+
+{% endblock  %}

@@ -1,0 +1,18 @@
+### Desde github
+
+echo "# flask-curso-platzi" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/luis2ra/flask-curso-platzi.git
+git push -u origin main
+
+
+### local
+$ pyenv virtualenv 3.9.16 flask
+$ pyenv local flask
+$ pyenv versions
+
+### correr flask
+$ flask --app main run --debug
